@@ -1,0 +1,54 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "JinGangRed",
+    "classifications": [
+        "Common",
+        "Library"
+    ],
+    "tags": {
+        "language": "C#",
+        "type": "Solution"
+    },
+    "identity": "DotNet Core Solution with Repository",
+    "name": "DotNet Core Solution with Repository",
+    "shortName": "cstsln",
+    "sourceName": "Template",
+    "preferNameDirectory": true,
+    "symbols": {
+        "SqlType": {
+            "type": "parameter",
+            "datatype": "choice",
+            "description": "Please select the Sql that you want use",
+            "defaultValue": "MSSQL",
+            "choices": [
+                {
+                    "choice": "MSSQL",
+                    "description": "Sql Server"
+                },
+                {
+                    "choice": "MYSQL",
+                    "description": "MySql"
+                }
+            ]
+        },
+        "MSSQL": {
+            "type": "computed",
+            "value": "(SqlType == \"MSSQL\")"
+        },
+        "MYSQL": {
+            "type": "computed",
+            "value": "(SqlType == \"MYSQL\")"
+        },
+    },
+    "sources": [
+        {
+            "modifiers": [
+                {
+                    "exclude": [
+                        "**/.vs"
+                    ]
+                }
+            ]
+        }
+    ]
+}
