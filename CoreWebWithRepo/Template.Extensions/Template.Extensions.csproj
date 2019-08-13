@@ -4,7 +4,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Swagger)' == 'True'">
+  <!--<ItemGroup Condition="'$(Swagger)' == 'True'">-->
+    <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 
@@ -13,10 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Template.Contracts\Template.Contracts.csproj" />
     <ProjectReference Include="..\Template.DbDomain\Template.DbDomain.csproj" />
+    <ProjectReference Include="..\Template.Services\Template.Services.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(Swagger)' == 'True'">
+  <!--<ItemGroup Condition="'$(Swagger)' == 'True'">-->
+    <ItemGroup>
     <None Update="Template.Extensions.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

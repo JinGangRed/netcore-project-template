@@ -1,4 +1,6 @@
-﻿#if (MSSQL)
+﻿#define MSSQL 
+#define Swagger
+#if (MSSQL)
 using Microsoft.EntityFrameworkCore;
 #endif
 using Microsoft.Extensions.Configuration;

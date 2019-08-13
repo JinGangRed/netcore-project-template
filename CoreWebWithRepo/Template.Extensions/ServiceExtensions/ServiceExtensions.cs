@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿#define MSSQL 
+#define Swagger
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Template.Contracts.IServices;
+using Template.Services.Authorize;
 
 namespace Template.Extensions.ServiceExtensions
 {
@@ -26,6 +30,10 @@ namespace Template.Extensions.ServiceExtensions
 
         }
 
+        public static void ConfigureServices(this IServiceCollection services)
+        {
+            services.AddScoped<IAuthorizeService, AuthorizeService>();
+        }
 
         public static IApplicationBuilder UseConfigurations(this IApplicationBuilder app)
         {
